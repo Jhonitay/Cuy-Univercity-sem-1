@@ -1,0 +1,7 @@
+LINK 
+1 CUY UNIVERCITY 1
+https://cuyunivercity1.nitayprasaddas.repl.co/index.html
+2 CUY UNIVERCITY 3
+https://cuyunivercity3.nitayprasaddas.repl.co
+4. CUY UNIVERCITY 5
+https://cuyunivercity5.nitayprasaddas.repl.co
