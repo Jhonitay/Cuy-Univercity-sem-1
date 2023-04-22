@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SESI 4-CEKREKAN LAMPU</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+</head>
+  <body>
+    <table>
+        <tr>
+            <td >
+                <div >
+                    <img id="lampu1" src="../ASET/IMG/off.gif" alt="" width="100px" />
+                    <h1 id="keterangan1">PADAM</h1>
+                    <label class="switch" >
+                        <input type="checkbox" id="t1" onchange="saklar()">
+                        <span class="slider"></span>
+                      </label>
+                  </div>
+            </td>
+            <td>
+                <div>
+                    <img id="lampu2" src="../ASET/IMG/off.gif" alt="" width="100px" />
+                    <h1 id="keterangan2">PADAM</h1>
+                    <label class="switch" >
+                        <input type="checkbox" id="t2"onchange="saklar()">
+                        <span class="slider"></span>
+                      </label>
+                  </div>
+            </td>
+            <td>
+                <div>
+                <img id="lampu3" src="../ASET/IMG/off.gif" alt="" width="100px" />
+                <h1 id="keterangan3">PADAM</h1>
+                <label class="switch" >
+                    <input type="checkbox"id="t3"onchange="saklar()">
+                    <span class="slider"></span>
+                  </label>
+              </div>
+            </td>
+        </tr>
+    </table>
+    <label class="switch" >
+        <input type="checkbox" id="t4" onchange="semua()">
+        <span class="slider"></span>
+      </label>
+    <!-- INI JS NYA  -->
+    <script src="../JS/SCRIPT.js"></script>
+  </body>
+</html>

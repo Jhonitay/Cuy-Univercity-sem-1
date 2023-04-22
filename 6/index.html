@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuy-Univercity6 semester1</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <a onclick="riset()" id="home">HOME</a>
+        <a onclick="darkMode()" id="mode">DARK-MODE</a>
+      </nav>
+      <h1>SESI 6 CUY UNIVERCITY</h1>
+      <p id="info" class="info"></p>
+    </div>
+
+    <script>
+      let body = document.body;
+      let info = document.getElementById("info");
+      let mode = document.getElementById("mode");
+      let home = document.getElementById("home");
+
+      const darkLimit = 4;
+      let darkCounter = 0;
+      let darkRemainingLeft;
+
+      function ubah() {
+        mode.style.backgroundColor = "black";
+        mode.style.display="none";
+      }
+
+      function riset(){
+        if(darkRemainingLeft==1){
+            location.reload();
+        }
+      }
+
+      function darkMode() {
+        darkCounter++;
+        if (darkCounter <= darkLimit) {
+          body.classList.toggle("dark");
+          body.classList=="dark"? mode.innerHTML="NORMAL-MODE":mode.innerHTML="DARK-MODE";
+          darkRemainingLeft = darkLimit - darkCounter + 1;
+          info.innerHTML = "sisa penggunaan Dark Mode " + darkRemainingLeft;
+        } else {
+          body.classList = "dark";
+          info.innerHTML = "Kesempatan Habis";
+          mode.addEventListener("mouseover",ubah());
+          home.innerText = "RESTART";
+        }
+      }
+    </script>
+  </body>
+</html>

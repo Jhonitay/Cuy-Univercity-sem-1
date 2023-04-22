@@ -1,0 +1,15 @@
+{
+  "name": "sesi-7",
+  "version": "1.0.0",
+  "description": "sesi 7 cuyunivercity beckend",
+  "main": "index.js",
+  "scripts": {
+    "nyala": "nodemon index.js"
+  },
+  "author": "jhonitay",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.22",
+    "rupiah-format": "^1.0.0"
+  }
+}

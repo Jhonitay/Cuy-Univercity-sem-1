@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="" />
+    <title>Document</title>
+  </head>
+  <style>
+    #root {
+      background-color: tomato;
+      color: white;
+      font-size: 2em;
+      text-align: center;
+      height: 100vh;
+    }
+  </style>
+  <body>
+    <!-- INI KONTENT KITA  -->
+
+    <div id="root">
+      <input placeholder="username" id="inputUsername" type="text" />
+      <input placeholder="password" id="inputPassword" type="password" />
+      <button onclick="onLogin()" id="masuk">LOGIN</button>
+      <button onclick="onLogout()" id="keluar">logout</button>
+      <br />
+      <h1 id="admin">admin</h1>
+      <h1 id="gagal">gagal</h1>
+    </div>
+
+    <script href="tes.js" type="application/javascript">
+      let inputUsername = document.getElementById("inputUsername");
+      let inputPassword = document.getElementById("inputPassword");
+      let admin = document.getElementById("admin");
+      let gagal = document.getElementById("gagal");
+      let masuk = document.getElementById("masuk");
+      let keluar = document.getElementById("keluar");
+
+      gagal.style.display = "none";
+      admin.style.display = "none";
+      keluar.style.display = "none";
+      bersihkan();
+
+      function onLogin() {
+        localStorage.setItem("username", inputUsername.value);
+        if (inputUsername.value == "admin" && inputPassword.value == "admin") {
+          keluar.style.display = "none";
+          localStorage.setItem("role", "Admin");
+          localStorage.setItem("true", "Admin");
+          bersihkan();
+          gagal.style.display = "none";
+          admin.style.display = "block";
+        } else {
+          localStorage.setItem("role", "gagal");
+          gagal.style.display = "block";
+          admin.style.display = "none";
+          alert("gagal");
+        }
+      }
+
+      function bersihkan(){
+        if (localStorage.getItem("true")) {
+          inputPassword.style.display = "none";
+          inputUsername.style.display = "none";
+          masuk.style.display = "none";
+        keluar.style.display = "block";
+        admin.style.display = "block";
+
+        }
+      }
+     
+      function onLogout() {
+          localStorage.clear();
+          location.reload();
+        }
+    </script>
+  </body>
+</html>
