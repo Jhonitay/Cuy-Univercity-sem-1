@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show video</title>
+    <style>
+      *,
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container{
+        padding-top: 20px;
+        max-width: 50%;
+        margin: 0 auto;
+        position: relative;
+    }
+    video{
+          border: 2px solid crimson ;
+        display: block;
+        width: 100%;
+      }
+      .video-component{
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 30px 12px;
+      }
+
+      .btn {
+        border-width: 1px;
+        border-color: white;
+        font-weight: 800;
+        cursor: pointer;
+        font-size: 10px;
+        border-radius: 8px;
+        width: 80px;
+        height: 30px;
+      }
+      .btn-play {
+        background-color: red;
+        color: white;
+      }
+      .btn-minimize {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <video controls >
+        <source src="FP_Cocacola.mp4" />
+      </video>
+      <div class="video-component">
+        <button onclick="play()" class="btn btn-play">PLAY</button>
+        <button onclick="pause()" class="btn btn-pause">PAUSE</button>
+        <button onclick="minimize()" class="btn btn-minimize">MINIMIZE</button>
+      </div>
+    </div>
+  </body>
+  <script>
+      const videoComponen = document.querySelector("video")
+    function play() {
+        videoComponen.play();
+    }
+    function pause() {
+        videoComponen.pause();
+    }
+    function minimize() {
+        videoComponen.requestPictureInPicture();
+    }
+  </script>
+</html>
